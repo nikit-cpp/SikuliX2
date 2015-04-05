@@ -9,7 +9,7 @@ import jxgrabkey.HotkeyConflictException;
 import jxgrabkey.HotkeyListener;
 import jxgrabkey.JXGrabKey;
 
-public class JXGrabKeyTest {
+public class JXGrabKeyLinux {
 
 	private static final int MY_HOTKEY_INDEX = 1; //1
 	private static boolean hotkeyEventReceived = false;

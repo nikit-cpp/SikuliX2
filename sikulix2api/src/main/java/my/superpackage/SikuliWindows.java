@@ -12,7 +12,7 @@ import org.sikuli.script.Key;
 
 import com.melloware.jintellitype.JIntellitype;
 
-public class Launcher {
+public class SikuliWindows {
 
 	public static void main(String[] args) {
 		JIntellitype.setLibraryLocation("c:\\Programming\\Examples-java\\workspace\\keyboard-windows\\lib\\JIntellitype.dll");
