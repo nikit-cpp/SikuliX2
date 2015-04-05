@@ -16,6 +16,7 @@ import org.sikuli.script.RunTime;
 public class LinuxHotkeyManager extends HotkeyManager {
    static{
          RunTime.loadLibrary("JXGrabKey");
+         //RunTime.loadLibrary("jxgrabkey");
    }
 
    class HotkeyData {
