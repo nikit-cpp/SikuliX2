@@ -1,6 +1,7 @@
-package org.sikuli.basics;
+package my.superpackage;
 
-public class LibLoader {
+@Deprecated
+public class LinuxLibLoader {
 
 	public static void main(String[] args) {
 		System.out.println(System.getProperty("java.library.path"));

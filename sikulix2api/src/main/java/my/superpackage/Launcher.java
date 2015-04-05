@@ -1,7 +1,13 @@
-package org.sikuli.basics;
+package my.superpackage;
 
 import java.awt.Event;
 
+import jxgrabkey.JXGrabKey;
+
+import org.sikuli.basics.HotkeyEvent;
+import org.sikuli.basics.HotkeyListener;
+import org.sikuli.basics.HotkeyManager;
+import org.sikuli.basics.WindowsHotkeyManager;
 import org.sikuli.script.Key;
 
 import com.melloware.jintellitype.JIntellitype;
