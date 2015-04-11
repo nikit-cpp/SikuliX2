@@ -20,7 +20,7 @@ public class SikuliLinux {
 
 	public static void main(String[] args) throws IOException {
 		RunTime.get();
-		System.load(new File("/home/nik/workspace/SikuliX2_my/lib/linux/libJXGrabKey-64.so").getCanonicalPath());
+		System.load("/home/nik/workspace/SikuliX2_my/lib/linux/libJXGrabKey-64.so");
 		Key.dump();
 		HotkeyManager hkm = LinuxHotkeyManager.getInstance();
 
