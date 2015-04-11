@@ -3,7 +3,9 @@ package my.superpackage;
 import java.io.File;
 import java.net.URL;
 
+import org.apache.commons.lang3.SystemUtils;
 import org.sikuli.basics.FileManager;
+import org.sikuli.basics.Settings;
 
 public class LibLoader {
 	public static void main(String... args) {
@@ -20,5 +22,10 @@ public class LibLoader {
 		
 		boolean extracted = FileManager.extractResource(resource, target);
 		System.out.println("Resource extracted? " + extracted);
+		
+		System.out.println("is lisux " + Settings.isLinux());
+		System.out.println("is windows " + Settings.isWindows());
+		
+		System.out.println(SystemUtils.OS_ARCH);
 	}
 }
