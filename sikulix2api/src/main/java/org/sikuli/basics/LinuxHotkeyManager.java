@@ -7,15 +7,20 @@
 package org.sikuli.basics;
 
 import org.sikuli.script.RunTime;
+
+import java.io.File;
 import java.util.*;
+
 import jxgrabkey.HotkeyConflictException;
 import jxgrabkey.JXGrabKey;
+
 import org.sikuli.basics.Debug;
 import org.sikuli.script.RunTime;
 
 public class LinuxHotkeyManager extends HotkeyManager {
    static{
-         RunTime.loadLibrary("JXGrabKey");
+         //RunTime.loadLibrary("JXGrabKey");
+	   System.load("/home/nik/workspace/SikuliX2_my/lib/linux/libJXGrabKey-64.so");
          //RunTime.loadLibrary("jxgrabkey");
    }
 
