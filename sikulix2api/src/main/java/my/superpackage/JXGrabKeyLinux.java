@@ -16,7 +16,7 @@ public class JXGrabKeyLinux {
 	
 	public static void main(String[] args) throws Exception {
 		//Load JXGrabKey lib
-		System.load(new File("lib/libJXGrabKey-64.so").getCanonicalPath());
+		System.load(new File("/home/nik/workspace/SikuliX2_my/lib/linux/libJXGrabKey-64.so").getCanonicalPath());
 		//Runtime.getRuntime().loadLibrary("JXGrabKey");
 		//System.load("/usr/lib64/libJXGrabKey.so");
 		

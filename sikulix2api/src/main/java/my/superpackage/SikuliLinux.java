@@ -12,17 +12,18 @@ import org.sikuli.basics.HotkeyManager;
 import org.sikuli.basics.LinuxHotkeyManager;
 import org.sikuli.basics.WindowsHotkeyManager;
 import org.sikuli.script.Key;
+import org.sikuli.script.RunTime;
 
 import com.melloware.jintellitype.JIntellitype;
 
 public class SikuliLinux {
 
 	public static void main(String[] args) throws IOException {
+		RunTime.get();
 		System.load(new File("/home/nik/workspace/SikuliX2_my/lib/linux/libJXGrabKey-64.so").getCanonicalPath());
 		Key.dump();
 		HotkeyManager hkm = LinuxHotkeyManager.getInstance();
-		//HotkeyManager hkm = WindowsHotkeyManager.getInstance();
-		// JIntellitype.MOD_WIN, (int)'A'
+
 		hkm.addHotkey('v', Event.ALT_MASK, new HotkeyListener() {
 			
 			@Override
