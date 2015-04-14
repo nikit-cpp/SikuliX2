@@ -11,10 +11,28 @@ public class LibLoader {
 	public static void main(String... args) {
 		String tempFolder = System.getProperty("java.io.tmpdir");
 		System.out.println(tempFolder);
-		File target = new File(tempFolder, "libJXGrabKey-64.so");
+		
+		File target = null;
+		String resource = null;
+		
+		if(SystemUtils.IS_OS_WINDOWS){
+			if(SystemUtils.OS_ARCH.equals("amd64")){
+				// load windows 64 JIntellitype
+			}else if(SystemUtils.OS_ARCH.equals("x86")){
+				// load windows 32 JIntellitype
+			}
+		} else if(SystemUtils.IS_OS_LINUX){
+			if(SystemUtils.OS_ARCH.equals("amd64")){
+				// load linux 64 JIntellitype
+				target = new File(tempFolder, "libJXGrabKey-64.so");
+				resource = "lib/linux/libJXGrabKey-64.so";
+			}else if(SystemUtils.OS_ARCH.equals("x86")){
+				// load linux 32 JIntellitype
+			}
+		}
+		
 		System.out.println("will extract to: " + target);
 		
-		String resource = "lib/linux/libJXGrabKey-64.so";
 		
 		URL res = LibLoader.class.getClassLoader().getResource(resource);
 		
@@ -23,9 +41,5 @@ public class LibLoader {
 		boolean extracted = FileManager.extractResource(resource, target);
 		System.out.println("Resource extracted? " + extracted);
 		
-		System.out.println("is lisux " + Settings.isLinux());
-		System.out.println("is windows " + Settings.isWindows());
-		
-		System.out.println(SystemUtils.OS_ARCH);
 	}
 }
