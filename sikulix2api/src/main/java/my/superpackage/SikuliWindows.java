@@ -1,6 +1,7 @@
 package my.superpackage;
 
 import java.awt.Event;
+
 import org.sikuli.basics.HotkeyEvent;
 import org.sikuli.basics.HotkeyListener;
 import org.sikuli.basics.HotkeyManager;
@@ -11,8 +12,9 @@ import com.melloware.jintellitype.JIntellitype;
 
 public class SikuliWindows {
 
-	public static void main(String[] args) {
-		JIntellitype.setLibraryLocation("c:\\Programming\\Examples-java\\workspace\\keyboard-windows\\lib\\JIntellitype.dll");
+	public static void main(String[] args) throws LoadLibException {
+		//JIntellitype.setLibraryLocation("c:\\Programming\\Examples-java\\workspace\\keyboard-windows\\lib\\JIntellitype.dll");
+		LibLoader.extractLib();
 		Key.dump();
 
 		HotkeyManager hkm = WindowsHotkeyManager.getInstance();

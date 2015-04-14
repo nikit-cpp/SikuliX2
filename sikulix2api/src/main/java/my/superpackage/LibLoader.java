@@ -13,12 +13,16 @@ public class LibLoader {
 	public static void main(String... args) {
 	}
 	
+	/*
+	 * Extracts native lib against system and returns path to extracted
+	 */
 	public static void extractLib() throws LoadLibException {
 		String tempFolder = System.getProperty("java.io.tmpdir");
 		System.out.println(tempFolder);
 		
 		File target = null;
 		String resource = null;
+		String extracted = null;
 		
 		if(SystemUtils.IS_OS_WINDOWS){
 			if(SystemUtils.OS_ARCH.equals("amd64")){
@@ -30,6 +34,8 @@ public class LibLoader {
 				target = new File(tempFolder, "JIntellitype.dll");
 				resource = "lib\\windows\\JIntellitype.dll";
 			}
+			extracted = extract(resource, target);
+			JIntellitype.setLibraryLocation(extracted);
 		} else if(SystemUtils.IS_OS_LINUX){
 			if(SystemUtils.OS_ARCH.equals("amd64")){
 				// load linux 64 JIntellitype
@@ -40,10 +46,15 @@ public class LibLoader {
 				target = new File(tempFolder, "libJXGrabKey-32.so");
 				resource = "lib/linux/libJXGrabKey-32.so";
 			}
+			extracted = extract(resource, target);
+			System.load(extracted);
 		}
 		
-		System.out.println("will extract to: " + target);
 		
+	}
+	
+	private static String extract(String resource, File target) throws LoadLibException{
+		System.out.println("will extract to: " + target);
 		
 		URL res = LibLoader.class.getClassLoader().getResource(resource);
 		
@@ -55,5 +66,7 @@ public class LibLoader {
 		if(!extracted){
 			throw new LoadLibException("Lib are not extracted");
 		}
+		
+		return target.getAbsolutePath();
 	}
 }

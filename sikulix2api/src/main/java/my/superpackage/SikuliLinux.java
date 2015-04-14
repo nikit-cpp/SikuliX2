@@ -1,7 +1,7 @@
 package my.superpackage;
 
 import java.awt.Event;
-import java.io.IOException;
+
 import org.sikuli.basics.HotkeyEvent;
 import org.sikuli.basics.HotkeyListener;
 import org.sikuli.basics.HotkeyManager;
@@ -10,9 +10,9 @@ import org.sikuli.script.Key;
 
 public class SikuliLinux {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws LoadLibException {
 
-		System.load("/home/nik/workspace/SikuliX2_my/lib/linux/libJXGrabKey-64.so");
+		LibLoader.extractLib();
 		Key.dump();
 		HotkeyManager hkm = LinuxHotkeyManager.getInstance();
 
