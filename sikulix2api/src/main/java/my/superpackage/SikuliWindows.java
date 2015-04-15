@@ -17,7 +17,7 @@ public class SikuliWindows {
 		LibLoader.extractLib();
 		Key.dump();
 
-		HotkeyManager hkm = WindowsHotkeyManager.getInstance();
+		HotkeyManager hkm = HotkeyManager.getInstance();
 
 		hkm.addHotkey('v', Event.ALT_MASK, new HotkeyListener() {
 			

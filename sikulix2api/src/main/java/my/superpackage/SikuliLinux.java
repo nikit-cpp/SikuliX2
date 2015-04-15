@@ -1,11 +1,9 @@
 package my.superpackage;
 
 import java.awt.Event;
-
 import org.sikuli.basics.HotkeyEvent;
 import org.sikuli.basics.HotkeyListener;
 import org.sikuli.basics.HotkeyManager;
-import org.sikuli.basics.LinuxHotkeyManager;
 import org.sikuli.script.Key;
 
 public class SikuliLinux {
@@ -14,7 +12,7 @@ public class SikuliLinux {
 
 		LibLoader.extractLib();
 		Key.dump();
-		HotkeyManager hkm = LinuxHotkeyManager.getInstance();
+		HotkeyManager hkm = HotkeyManager.getInstance();
 
 		hkm.addHotkey('v', Event.ALT_MASK, new HotkeyListener() {
 			

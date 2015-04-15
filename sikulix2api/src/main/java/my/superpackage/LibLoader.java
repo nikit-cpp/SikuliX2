@@ -53,6 +53,16 @@ public class LibLoader {
 		
 	}
 	
+	public static void getHotkeyManager() throws LoadLibException {
+		if(SystemUtils.IS_OS_WINDOWS){
+			
+		} else if(SystemUtils.IS_OS_LINUX){
+
+		}
+		
+		
+	}
+	
 	private static String extract(String resource, File target) throws LoadLibException{
 		System.out.println("will extract to: " + target);
 		
