@@ -39,7 +39,7 @@
   
   <groupId>com.sikulix</groupId>
   <artifactId>sikulix2api</artifactId>
-  <version>2.0.8</version>
+  <version>2.0.9</version>
   
   <repositories>
     <repository>  <!-- com.sikulix.sikulixapi: jxgrabkey -->
@@ -163,6 +163,40 @@
       </plugin>
       
     </plugins>
+    <pluginManagement>
+    	<plugins>
+    		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+    		<plugin>
+    			<groupId>org.eclipse.m2e</groupId>
+    			<artifactId>lifecycle-mapping</artifactId>
+    			<version>1.0.0</version>
+    			<configuration>
+    				<lifecycleMappingMetadata>
+    					<pluginExecutions>
+    						<pluginExecution>
+    							<pluginExecutionFilter>
+    								<groupId>org.codehaus.mojo</groupId>
+    								<artifactId>
+    									autoincrement-versions-maven-plugin
+    								</artifactId>
+    								<versionRange>
+    									[2.0-SNAPSHOT,)
+    								</versionRange>
+    								<goals>
+    									<goal>commit</goal>
+    									<goal>increment</goal>
+    								</goals>
+    							</pluginExecutionFilter>
+    							<action>
+    								<ignore></ignore>
+    							</action>
+    						</pluginExecution>
+    					</pluginExecutions>
+    				</lifecycleMappingMetadata>
+    			</configuration>
+    		</plugin>
+    	</plugins>
+    </pluginManagement>
   </build>
   
   <distributionManagement>
