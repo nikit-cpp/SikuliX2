@@ -1551,8 +1551,7 @@ public class FileManager {
   }
 
   public static boolean extractResource(String src, File tgt) {
-    ClassLoader cl = FileManager.class.getClassLoader();
-    InputStream isContent = cl.getResourceAsStream(src);
+    InputStream isContent = FileManager.class.getResourceAsStream(src);
     if (isContent != null) {
       try {
         log(lvl + 1, "extractResource: %s to %s", src, tgt);
