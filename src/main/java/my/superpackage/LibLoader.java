@@ -28,11 +28,11 @@ public class LibLoader {
 			if(SystemUtils.OS_ARCH.equals("amd64")){
 				// load windows 64 JIntellitype
 				target = new File(tempFolder, "JIntellitype64.dll");
-				resource = "lib\\windows\\JIntellitype64.dll";
+				resource = "/lib/windows/JIntellitype64.dll";
 			}else if(SystemUtils.OS_ARCH.equals("x86")){
 				// load windows 32 JIntellitype
 				target = new File(tempFolder, "JIntellitype.dll");
-				resource = "lib\\windows\\JIntellitype.dll";
+				resource = "/lib/windows/JIntellitype.dll";
 			}
 			extracted = extract(resource, target);
 			JIntellitype.setLibraryLocation(extracted);
@@ -40,11 +40,11 @@ public class LibLoader {
 			if(SystemUtils.OS_ARCH.equals("amd64")){
 				// load linux 64 JIntellitype
 				target = new File(tempFolder, "libJXGrabKey-64.so");
-				resource = "lib/linux/libJXGrabKey-64.so";
+				resource = "/lib/linux/libJXGrabKey-64.so";
 			}else if(SystemUtils.OS_ARCH.equals("x86")){
 				// load linux 32 JIntellitype
 				target = new File(tempFolder, "libJXGrabKey-32.so");
-				resource = "lib/linux/libJXGrabKey-32.so";
+				resource = "/lib/linux/libJXGrabKey-32.so";
 			}
 			extracted = extract(resource, target);
 			System.load(extracted);
